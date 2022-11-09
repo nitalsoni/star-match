@@ -1,0 +1,51 @@
+.Button {
+    padding: 20px;
+    background-color: aqua;
+}
+
+.game {
+    display: flex;
+    max-width: 600px;
+}
+
+.left {
+    text-align: center;
+    width: 50%;
+    border: thin solid #ddd;
+    height: 300px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+}
+
+.right {
+    width: 50%;
+    border: thin solid #ddd;
+    height: 300px;
+    justify-content: center;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.star {
+    display: inline-block;
+    margin: 10px 20px 10px 10px;
+    cursor: pointer;
+}
+.star::after {
+    content: "\272D";
+    font-size: 60px;
+}
+
+.number {
+    display: inline-block;
+    background-color: #eee;
+    border: thin solid #ddd;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    font-size: 30px;
+    margin: 10px 20px 10px 10px;
+    cursor: pointer;
+}

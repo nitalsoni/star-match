@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { render } from '@testing-library/react';
+import { CardList, Form } from './Card';
+import { StarMatch } from './StarMatch';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    //const [counter, setCounter] = useState(0);
+    //const [gameId, setGameId] = useState(1);
+
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         profiles: testData
+    //     };
+    // }
+
+    state = {
+        profiles: [],
+        gameId: 1
+    };
+
+    // onAddProfile = (newProfile) => {
+    //     this.setState(prevState => ({
+    //         profiles: [...prevState.profiles, newProfile]
+    //     }));
+    // }
+
+    // render() {
+    //     return (
+    //         <div>
+    //             <Form onAdd={this.onAddProfile} />
+    //             <CardList profiles={this.state.profiles} />
+    //         </div>
+    //     );
+    // }
+
+    render() {
+
+        return (
+            <div style={{ alignSelf: 'center' }}>
+                <StarMatch key={this.state.gameId} startNewGame={() => this.setState({
+                    gameId: this.state.gameId + 1
+                })}></StarMatch>
+            </div>
+        );
+    }
 }
 
 export default App;
